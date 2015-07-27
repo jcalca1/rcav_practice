@@ -4,6 +4,6 @@
 </head>
 <body>
 
-<div>A <%= @years%> year loan of <%= @loan_amount%>, with an annual interest rate of <%= @rate%>, requires a monthly payment of <%= @payment%><%= @test%></div>
+<div>A <%= @years%> year loan of <%= number_to_currency(@loan_amount, precision:0) %>, with an annual interest rate of <%= number_to_percentage(@rate*100,precision: 1)%>, requires a monthly payment of <%= number_to_currency(@payment) %>.</div>
 </body>
 </html>

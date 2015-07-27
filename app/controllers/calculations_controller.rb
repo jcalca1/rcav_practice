@@ -20,11 +20,10 @@ end
 
 def payment
 
-  @rate = number_to_percentage(params["num1"])
-  @years = params["num2"].to_f
-  @loan_amount = params["num3"].to_f
+  @rate = params["num1"].to_f/1000
+  @years = params["num2"].to_i
+  @loan_amount = params["num3"].to_i
 @payment=(@rate*@loan_amount)/(1-(1+@rate)**(-@years))
-@test= number_to_currency(@rate)
 render("payment.html.erb")
 end
 
